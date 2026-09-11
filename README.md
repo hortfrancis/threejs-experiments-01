@@ -11,6 +11,7 @@ URL. The menu at `/` lists them automatically.
 | --- | --- |
 | `/experiments/01-isometric-floor/` | Orthographic isometric camera, checkerboard floor, arrow-key movement in two styles |
 | `/experiments/02-stick-figure/` | Jointed stick character with outlines, a lathed torso and tube limbs |
+| `/experiments/03-character-builder/` | The same figure with a lil-gui panel driving its proportions and colours. Saved looks are in [presets.md](experiments/03-character-builder/presets.md) |
 
 ## Adding one
 
