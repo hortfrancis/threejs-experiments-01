@@ -10,6 +10,7 @@ URL. The menu at `/` lists them automatically.
 | Path | What it is |
 | --- | --- |
 | `/experiments/01-isometric-floor/` | Orthographic isometric camera, checkerboard floor, arrow-key movement in two styles |
+| `/experiments/02-stick-figure/` | Jointed stick character with outlines, a lathed torso and tube limbs |
 
 ## Adding one
 
