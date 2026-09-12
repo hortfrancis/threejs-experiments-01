@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drifting speech</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #faf6ef; overflow: hidden; }
+      canvas { display: block; }
+
+      /* The CSS2D layer sits over the canvas and must not eat clicks, or
+         dragging to orbit the camera would stop working. */
+      #labels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .glyph {
+        display: block;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-weight: 600;
+        font-size: var(--glyph-size, 17px);
+        line-height: 1;
+        color: var(--ink, #101014);
+        white-space: pre;
+      }
+
+      #back {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        font: 500 14px/1 system-ui, sans-serif;
+        color: #9a9081;
+        text-decoration: none;
+      }
+
+      #back:hover { color: #2a2620; }
+
+      #hint {
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        margin: 0;
+        font: 500 14px/1 system-ui, sans-serif;
+        color: #9a9081;
+      }
+    </style>
+  </head>
+  <body>
+    <a id="back" href="/">All experiments</a>
+    <p id="hint">Arrow keys to walk. Type to speak. No backspace. Panel on the right tunes the decay.</p>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
