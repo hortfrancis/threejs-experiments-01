@@ -1,0 +1,12 @@
+{
+  // A Worker that serves nothing but static files. With an "assets" block and
+  // no "main" entry point, Cloudflare serves the built site straight from its
+  // edge and no Worker code runs at all.
+  "name": "threejs-experiments-01",
+  "compatibility_date": "2026-09-12",
+  "assets": {
+    "directory": "./dist"
+    // Default html_handling resolves /experiments/01-isometric-floor/ to that
+    // folder's index.html, which is exactly how the experiments are laid out.
+  }
+}
