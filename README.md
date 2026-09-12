@@ -14,6 +14,7 @@ URL. The menu at `/` lists them automatically.
 | `/experiments/03-character-builder/` | The same figure with a lil-gui panel driving its proportions and colours. Saved looks are in [presets.md](experiments/03-character-builder/presets.md) |
 | `/experiments/04-speech-bubbles/` | Speech bubbles as real HTML in the scene, via CSS2DRenderer |
 | `/experiments/05-drifting-speech/` | Speech as a stream of single characters that drift and decay on a half-life |
+| `/experiments/06-interaction/` | Walk up to things and press Enter: a lamp, a crate you carry, a sign you read |
 
 ## Adding one
 

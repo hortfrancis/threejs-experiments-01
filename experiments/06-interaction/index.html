@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interaction</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #faf6ef; overflow: hidden; }
+      canvas { display: block; }
+
+      #labels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      /* The prompt that appears over whatever is within reach. */
+      .prompt {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 5px 11px 5px 5px;
+        background: #101014;
+        border-radius: 999px;
+        font: 600 12px/1 system-ui, sans-serif;
+        color: #fff;
+        white-space: nowrap;
+      }
+
+      .key {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        padding-bottom: 1px;
+        background: #fff;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 1;
+        color: #101014;
+      }
+
+      /* A panel an object owns and shows for itself. */
+      .panel {
+        width: 250px;
+        padding: 14px 16px 16px;
+        background: #fffdf6;
+        border: 3px solid #101014;
+        border-radius: 10px;
+        box-shadow: 4px 5px 0 rgba(16, 16, 20, 0.18);
+        font: 500 14px/1.45 system-ui, sans-serif;
+        color: #101014;
+      }
+
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #8a8272;
+      }
+
+      .panel p { margin: 0 0 7px; }
+      .panel p:last-child { margin-bottom: 0; }
+      .panel .faded { color: #9a9081; font-style: italic; }
+
+      #back {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        font: 500 14px/1 system-ui, sans-serif;
+        color: #9a9081;
+        text-decoration: none;
+      }
+
+      #back:hover { color: #2a2620; }
+
+      #hint {
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        margin: 0;
+        font: 500 14px/1 system-ui, sans-serif;
+        color: #9a9081;
+      }
+    </style>
+  </head>
+  <body>
+    <a id="back" href="/">All experiments</a>
+    <p id="hint">Arrow keys to walk. Enter to interact with whatever is in reach.</p>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
