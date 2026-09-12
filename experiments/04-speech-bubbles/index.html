@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speech bubbles</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #faf6ef; overflow: hidden; }
+      canvas { display: block; }
+
+      /* The CSS2D layer goes here, over the canvas. It must not eat clicks,
+         or dragging to orbit the camera would stop working. */
+      #labels {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .bubble {
+        position: relative;
+        max-width: 230px;
+        padding: 9px 13px;
+        background: #fff;
+        border: 3px solid #000;
+        border-radius: 16px;
+        font: 500 16px/1.35 system-ui, sans-serif;
+        color: #101014;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+
+      /* The tail, drawn twice: a black triangle with a slightly smaller white
+         one on top, so the outline reads as continuous. */
+      .bubble::before,
+      .bubble::after {
+        content: '';
+        position: absolute;
+        left: 22px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      .bubble::before {
+        bottom: -15px;
+        border-width: 15px 11px 0 0;
+        border-color: #000 transparent transparent transparent;
+      }
+
+      .bubble::after {
+        bottom: -10px;
+        border-width: 10px 7px 0 0;
+        border-color: #fff transparent transparent transparent;
+      }
+
+      .caret {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        margin-left: 1px;
+        vertical-align: text-bottom;
+        background: #101014;
+        animation: blink 1s steps(1) infinite;
+      }
+
+      @keyframes blink { 50% { opacity: 0; } }
+
+      #back {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        font: 500 14px/1 system-ui, sans-serif;
+        color: #9a9081;
+        text-decoration: none;
+      }
+
+      #back:hover { color: #2a2620; }
+
+      #hint {
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        margin: 0;
+        font: 500 14px/1 system-ui, sans-serif;
+        color: #9a9081;
+      }
+    </style>
+  </head>
+  <body>
+    <a id="back" href="/">All experiments</a>
+    <p id="hint">Arrow keys to walk. Just start typing. Enter to let it go.</p>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
